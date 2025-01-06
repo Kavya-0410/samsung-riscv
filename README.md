@@ -29,10 +29,14 @@ Task 1.2: RISC-V Based Compilation
 In this part, we perform the same task, but this time using the RISC-V GCC compiler to compile and generate assembly code for the program.
 Steps:
 1.	View the C code using cat: Open the terminal and run:
+	
                cat sum1ton.c
+  	
 This will display the entire C code on the terminal.
+
 2.	Compile the C code using the RISC-V GCC compiler: Run the following command to compile the code:
-               riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum_1ton.o sum_1ton.c
+               
+	       riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum_1ton.o sum_1ton.c
   	
 The flags used here:
 >	-O1: Applies basic optimizations to reduce execution time and code size.
@@ -40,7 +44,9 @@ The flags used here:
 >	-march=rv64i: Specifies the RISC-V 64-bit integer instruction set.
 >	-o sum_1ton.o: Specifies the output file name.
 3.	Disassemble the object file to view the assembly code: Open a new terminal and run:
+
                riscv64-unknown-elf-objdump -d sum_1ton.o
+
 This will display the assembly code generated from the C source code. To locate the main section of the code, type /main in the terminal.
 
 Keywords and Compiler Options Used
