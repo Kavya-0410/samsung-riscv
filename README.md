@@ -3,9 +3,13 @@
 
 Task 1-
 C Language and RISC-V Based Compilation Lab
+
 This repository contains the tasks and steps related to compiling C code using both GCC (GNU Compiler Collection) and RISC-V GCC compiler. It involves writing C code to calculate the sum of numbers from 1 to N and compiling the code using both traditional GCC and the RISC-V GCC compiler.
+
 Task 1.1: C Language-based Compilation
+
 In this part, we work with C code on a local system using the GCC compiler to compile and execute a simple program that prints the sum of numbers from 1 to N.
+
 Steps:
 1.	Open the terminal and navigate to the directory to create your file.
 2.	Create and write your C code:
@@ -26,7 +30,9 @@ This will open the vi editor. Write the C code in the editor to calculate the su
                ./a.out
 
 Task 1.2: RISC-V Based Compilation
+
 In this part, we perform the same task, but this time using the RISC-V GCC compiler to compile and generate assembly code for the program.
+
 Steps:
 1.	View the C code using cat: Open the terminal and run:
 	
