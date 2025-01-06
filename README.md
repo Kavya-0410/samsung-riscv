@@ -57,10 +57,15 @@ This will display the assembly code generated from the C source code. To locate 
 Keywords and Compiler Options Used
 
 >	-mabi=lp64: Specifies the 64-bit Application Binary Interface (ABI), which is used for 64-bit integer, long, and pointer sizes.
+
 >	-march=rv64i: Defines the target architecture as a 64-bit RISC-V base integer instruction set (RV64I).
+
 >	riscv64-unknown-elf-gcc: The RISC-V GCC compiler used for compiling RISC-V code.
+
 >	riscv64-unknown-elf-objdump: A tool for disassembling RISC-V binaries, allowing you to inspect the assembly code.
+
 >	-Ofast: A compiler optimization flag to maximize the speed of the generated code.
+
 >	-O1: A level of optimization that balances between speed and compilation time. It reduces code size and execution time without increasing compilation time significantly.
 
 Notes on Compiler Optimizations:
@@ -68,9 +73,13 @@ Notes on Compiler Optimizations:
 •	Optimization Levels:
 
 >	-O0: No optimization (default).
+
 >	-O1: Basic optimization to improve code speed and size.
+
 >	-O2: More aggressive optimization that may take longer to compile but provides faster or smaller code.
+
 >	-O3: Maximizes optimization with additional code transformations, potentially increasing compilation time.
+
 >	-Os: Optimizes code size and reduces memory usage, often used for embedded systems.
 
 •	-Ofast Optimization: The -Ofast flag optimizes the generated code for the maximum speed, which may sometimes lead to non-standard behaviour. It is suitable for applications where execution speed is more critical than strict compliance with standards.
