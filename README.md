@@ -91,3 +91,41 @@ Notes on Compiler Optimizations:
 •	-Ofast Optimization: The -Ofast flag optimizes the generated code for the maximum speed, which may sometimes lead to non-standard behaviour. It is suitable for applications where execution speed is more critical than strict compliance with standards.
 
 
+
+
+Task 2-Performing SPIKE Simulation and Debugging the C code with Interactive Debugging Mode using Spike
+
+What is SPIKE in RISCV?
+
+A RISC-V ISA is a simulator, enabling the testing and analysis of RISC-V programs without the need for actual hardware.
+Spike is a free, open-source C++ simulator for the RISC-V ISA that models a RISC-V core and cache system. It can be used to run programs and a Linux kernel, and can be a starting point for running software on a RISC-V target.
+
+
+What is pk (Proxy Kernel)?
+
+The RISC-V Proxy Kernel, pk , is a lightweight application execution environment that can host statically-linked RISC-V ELF binaries.
+A Proxy Kernel in the RISC-V ecosystem simplifies the interaction between complex hardware and the software running on it, making it easier to manage, test, and develop software and hardware projects.
+
+Testing the SPIKE Simulator
+
+The target is to run the sum1ton.c code using both gcc compiler and riscv compiler, and both of the compiler must display the same output on the terminal. So to compile the code using gcc compiler, use the following command:
+
+               gcc sum1ton.c  
+
+               ./a.out
+
+
+And to compile the code using riscv compiler, use the following command:
+
+               spike pk sum1ton.o
+
+Debugging the Assembly Language Program of sum1ton.c
+Open the Objdump of code by using the following command
+
+               riscv64-unknown-elf-objdump -d sum1ton.o | less  
+Open the debugger in another terminal by using the following command
+ 
+              spike -d pk sum1ton.o
+The debugger will be opened in the terminal.
+
+
