@@ -1,4 +1,4 @@
-# Samsung RISC-V Project
+# Samsung RISC-V Project 
 "Repository for RISC-V related projects and experiments under Samsung's ecosystem."
 
 # Task 1-
