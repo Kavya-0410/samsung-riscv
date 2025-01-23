@@ -427,3 +427,33 @@ Now, let's analyse each instruction given to us one by one
                      0000000_00010_00001_001_01111_0110011
 
 
+
+# TASK 4-
+
+4.1 About iverilog and gtkwave
+
+Icarus Verilog is an implementation of the Verilog hardware description language.
+GTKWave is a fully featured GTK+ v1. 2 based wave viewer for Unix and Win32 which reads Ver Structural Verilog Compiler generated AET files as well as standard Verilog VCD/EVCD files and allows their viewing.
+
+4.2 Installing iverilog and gtkwave
+
+For Ubuntu
+Open your terminal and type the following to install iverilog and GTKWave
+
+           sudo apt update
+           sudo apt install iverilog gtkwave
+
+           
+Opens the document where we can copy paste the code and save the file.
+
+           gedit
+
+To simulate and run the verilog code , enter the following commands in your terminal.
+
+           iverilog -o iiitb_rv32i iiitb_rv32i.v iiitb_rv32i_tb.v
+           ./iiitb_rv32i
+
+To see the output waveform in gtkwave, enter the following commands in your terminal.
+
+           gtkwave iiitb_rv32i.vcd
+
