@@ -457,3 +457,69 @@ To see the output waveform in gtkwave, enter the following commands in your term
 
            gtkwave iiitb_rv32i.vcd
 
+    
+
+#TASK 6 -TO BUILD AN APPLICATION
+
+
+**Automatic Light System** 
+
+ **Project Description**  
+ This project implements an **Automatic Light System** that turns lights ON or OFF based on ambient light conditions. It uses an **LDR (Light Dependent Resistor) and a microcontroller (such as Arduino)** to automate lighting based on the environment's brightness. The system is useful for energy efficiency and smart home automation.
+
+**Features**  
+✅ Automatic switching of lights based on ambient light intensity  
+✅ Low power consumption  
+✅ Adjustable sensitivity  
+✅ Can be extended for IoT-based remote control  
+
+**Hardware Requirements**  
+- Arduino Uno / ESP8266 (or any microcontroller)  
+- Light Dependent Resistor (LDR)  
+- Relay module  
+- LED or 230V bulb (with proper relay)  
+- Resistors (10kΩ, 1kΩ)  
+- Power supply (5V or as required)  
+
+**Software Requirements**  
+- Arduino IDE  
+
+**Usage**  
+ Open the code in **Arduino IDE**  
+ Upload the code to **Arduino**  
+ Connect the circuit as per the diagram  
+ Observe the light turning ON/OFF automatically based on brightness  
+
+**Code Explanation**  
+- Reading sensor values from LDR  
+- Decision-making using threshold values  
+- Controlling relay module for light operation  
+
+// Define pins
+const int LDR_PIN = A0;    // LDR sensor connected to analog pin A0
+const int RELAY_PIN = 7;   // Relay connected to digital pin 7
+
+// Set the threshold value for darkness (Adjust based on testing)
+const int THRESHOLD = 500; // Lower value means less light
+
+void setup() {
+    pinMode(RELAY_PIN, OUTPUT); // Set relay pin as output
+    digitalWrite(RELAY_PIN, HIGH); // Initially turn OFF the light (Relay is active LOW)
+    Serial.begin(9600); // Initialize Serial Monitor
+}
+
+void loop() {
+    int ldrValue = analogRead(LDR_PIN); // Read LDR sensor value
+    Serial.print("LDR Value: ");
+    Serial.println(ldrValue); // Print LDR value for debugging
+
+    if (ldrValue < THRESHOLD) {
+        digitalWrite(RELAY_PIN, LOW); // Turn ON the light
+        Serial.println("Light ON");
+    } else {
+        digitalWrite(RELAY_PIN, HIGH); // Turn OFF the light
+        Serial.println("Light OFF");
+    }
+
+    delay(500); // Small delay to avoid rapid switching
+}
